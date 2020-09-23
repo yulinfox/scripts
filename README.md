@@ -13,4 +13,4 @@ HostName github.com
 User testUser
 IdentityFile testFile
 ```
-拷贝后放到自己的**.ssh**文件夹下的**config**文件中保存即可
+拷贝后放到自己的 .ssh 文件夹下的 config 文件中保存即可
