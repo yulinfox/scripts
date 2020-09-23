@@ -1,24 +1,28 @@
 host='github.com'
 hostName='github.com'
-user='testUser'
+gitUser='testUser'
 identityFile='testFile'
 
-while getopts ":host:hostName:user:identityFile" opt
+while getopts ":h:n:u:i:" opt
 do
-  case $opt in
-    host)
-    host=$OPTARG
-    ;;
-    hostName)
-    hostName=$OPTARG
-    ;;
-    user)
-    user=$OPTARG
-    ;;
-    identityFile)
-    user=$OPTARG
-    ;;
-  esac
+    case $opt in
+        h)
+        host=$OPTARG
+        ;;
+        n)
+        hostName=$OPTARG
+        ;;
+        u)
+        gitUser=$OPTARG
+        ;;
+        i)
+        identityFile=$OPTARG
+        ;;
+        ?)
+        echo "未知参数"
+        exit 1;;
+    esac
 done
+echo ${identityFile}
 
-echo -e "#config文件通过host区分不同的托管库\nHost ${host}\nHostName ${hostName}\nUser ${user}\nIdentityFile ${identityFile}"
+echo -e "#config文件通过host区分不同的托管库\nHost ${host}\nHostName ${hostName}\nUser ${gitUser}\nIdentityFile ${identityFile}"
