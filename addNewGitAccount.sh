@@ -23,6 +23,5 @@ do
         exit 1;;
     esac
 done
-echo ${identityFile}
 
 echo -e "#config文件通过host区分不同的托管库\nHost ${host}\nHostName ${hostName}\nUser ${gitUser}\nIdentityFile ${identityFile}"
